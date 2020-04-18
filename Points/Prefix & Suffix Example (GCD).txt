@@ -1,0 +1,27 @@
+	int prefixgcd[n] , suffixgcd[n];
+            prefixgcd[0] = a[0];
+            suffixgcd[n-1] = a[n-1];
+            
+            for(ll i=1;i<n;i++)
+            {
+                prefixgcd[i] = hcf(prefixgcd[i-1], a[i]);
+            }
+            
+            for(ll i=n-2;i>=0;i--)
+            {
+                suffixgcd[i] = hcf(suffixgcd[i+1], a[i]);
+            }
+            
+            
+            result = a[0] + suffixgcd[1];
+            
+            for(ll i=1;i<n-1;i++)
+            {
+                temp_result = hcf(prefixgcd[i-1], suffixgcd[i+1]) + a[i];
+                if(temp_result>result)
+                    result = temp_result;
+            }
+            
+            if(a[n-1] + prefixgcd[n-2] > result)
+                result = a[n-1] + prefixgcd[n-2];
+            

@@ -1,0 +1,4 @@
+int findMMI_fermat(int n,int mod)
+{
+    return pow(n,mod-2,mod);
+}

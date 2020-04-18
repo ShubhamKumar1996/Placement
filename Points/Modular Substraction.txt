@@ -1,0 +1,19 @@
+( a – b ) % c = ( ( a % c ) – ( b % c ) ) %c is fine mathematically. But, while programming, don’t use
+
+1
+2
+3
+4
+// if b&gt;a, you'll get wrong result this way 
+a=(a%c);
+b=(b%c);
+ans = ( a - b ) % c; 
+instead use
+
+1
+2
+3
+a=a%c;
+b=b%c;
+ans =  ( a - b + c ) % c;
+% works differently with -ve numbers

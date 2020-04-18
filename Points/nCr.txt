@@ -1,0 +1,10 @@
+ll efficient_nCr(ll n, ll r) {
+    ll res = 1;
+    if(r > n - r) r = n - r; // This line does not affect the result but affectes the efficiency as the loop below will execute a smaller number of times.
+    for(int i = 0; i < r; ++i) {
+        res *= (n - i);
+        res /= (i + 1);
+    }
+    return res;
+
+}

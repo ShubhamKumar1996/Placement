@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num_vertex, num_edge;
+    cout<<"Enter Number Of Verticies: ";
+    cin>>num_vertex;
+    cout<<"Enter Number Of Edges: ";
+    cin>>num_edge;
+    vector<pair<int,int>>edges;
+    vector<vector<int>>matrix(num_vertex+1, (vector<int>(num_vertex+1)));
+    cout<<"Enter Edges: ";
+    for(int i=0;i<num_edge;i++)
+    {
+        int x, y;
+        cin>>x>>y;
+        edges.push_back(make_pair(x,y));
+        matrix[x][y] = 1;
+    }
+    cout<<"\n";
+    for(int i=1;i<=num_vertex;i++)
+    {
+        for(int j=1;j<=num_vertex;j++)
+        {
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+}

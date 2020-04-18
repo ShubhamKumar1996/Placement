@@ -1,0 +1,3 @@
+sort(a.begin(), a.end());
+(iterator) it = unique(a.begin(), a.end());
+        a.resize(distance(a.begin(), it));

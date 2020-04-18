@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void Print_Segment_Tree(int *segment_tree, int size)
+{
+    for(int i=0;i<size;i++)
+	    cout<<segment_tree[i]<<" ";
+}
+
+int ConstructUntill(int *a, int start, int end, int *segment_tree, int curr_index)
+{
+    if(start == end)
+    {
+        segment_tree[curr_index] = a[start];
+        return segment_tree[curr_index];
+    }
+    
+    else
+    {
+        int mid = (start+end)/2;
+        segment_tree[curr_index] = ConstructUntill(a, start, mid, segment_tree, 2*curr_index+1)+ 
+                                ConstructUntill(a, mid+1, end, segment_tree, 2*curr_index+2);
+        return segment_tree[curr_index];
+    }
+}
+
+int FindSize(int *a, int n)
+{
+    int height_st = ( int )( ceil( log2(n) ) );     // ceil = smallest greater element.
+    int max_size = 2*(int)( pow(2, height_st) ) - 1;
+    return max_size;
+}
+
+int main() {
+    int n = 6;
+	int a[n] = {1,3,5,7,9,11};
+	
+	int size = FindSize(a, n);
+	
+	int *segment_tree = new int[size];
+	
+	ConstructUntill(a, 0, 5, segment_tree, 0);
+	Print_Segment_Tree(segment_tree, size);
+	
+	return 0;
+}
