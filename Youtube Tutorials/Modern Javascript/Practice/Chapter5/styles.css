@@ -1,0 +1,11 @@
+.success{
+    color: green;
+}
+
+.error{
+    color: crimson;
+}
+
+.neutral{
+    color: yellow;
+}
