@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<title>What is Normalization? | Database.Guide</title>
+
+<!-- All In One SEO Pack 3.4.3[212,264] -->
+<meta name="description" content="Normalization&nbsp;is the process of organizing a database to reduce redundancy and improve data integrity. Normalization also simplifies the database design so that">
+
+<meta name="keywords" content="codd,database design,database schema,normalization,rdbms,what is,database concepts">
+
+<script type="text/javascript" async="" src="What%20is%20Normalization_files/linkid.js"></script><script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://database.guide/#organization","url":"https://database.guide/","name":"Database.Guide","sameAs":[]},{"@type":"WebSite","@id":"https://database.guide/#website","url":"https://database.guide/","name":"Database.Guide","publisher":{"@id":"https://database.guide/#organization"}},{"@type":"WebPage","@id":"https://database.guide/what-is-normalization/#webpage","url":"https://database.guide/what-is-normalization/","inLanguage":"en-US","name":"What is Normalization?","isPartOf":{"@id":"https://database.guide/#website"},"breadcrumb":{"@id":"https://database.guide/what-is-normalization/#breadcrumblist"},"datePublished":"2017-10-07T04:31:30+10:00","dateModified":"2020-02-14T23:29:31+10:00"},{"@type":"Article","@id":"https://database.guide/what-is-normalization/#article","isPartOf":{"@id":"https://database.guide/what-is-normalization/#webpage"},"author":{"@id":"https://database.guide/author/ian/#author"},"headline":"What is Normalization?","datePublished":"2017-10-07T04:31:30+10:00","dateModified":"2020-02-14T23:29:31+10:00","commentCount":0,"mainEntityOfPage":{"@id":"https://database.guide/what-is-normalization/#webpage"},"publisher":{"@id":"https://database.guide/#organization"},"articleSection":"Database Concepts, codd, database design, database schema, normalization, rdbms, what is"},{"@type":"Person","@id":"https://database.guide/author/ian/#author","name":"Ian","sameAs":[],"image":{"@type":"ImageObject","@id":"https://database.guide/#personlogo","url":"https://secure.gravatar.com/avatar/cf26bc738d620c9d38c272a08dd3fed7?s=96&d=mm&r=g","width":96,"height":96,"caption":"Ian"}},{"@type":"BreadcrumbList","@id":"https://database.guide/what-is-normalization/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://database.guide/","url":"https://database.guide/","name":"Database.Guide"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://database.guide/what-is-normalization/","url":"https://database.guide/what-is-normalization/","name":"What is Normalization?"}}]}]}</script>
+<link rel="canonical" href="https://database.guide/what-is-normalization/">
+			<script type="text/javascript">
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-269964-18', 'auto');
+				// Plugins
+				ga('require', 'linkid', 'linkid.js');ga('require', 'outboundLinkTracker');
+				ga('send', 'pageview');
+			</script>
+			<script async="" src="What%20is%20Normalization_files/analytics.js"></script>
+			<script async="" src="What%20is%20Normalization_files/autotrack.js"></script>
+				<!-- All In One SEO Pack -->
+<link rel="dns-prefetch" href="file:///">
+<link rel="alternate" type="application/rss+xml" title="Database.Guide » Feed" href="https://database.guide/feed/">
+<link rel="alternate" type="application/rss+xml" title="Database.Guide » Comments Feed" href="https://database.guide/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Database.Guide » What is Normalization? Comments Feed" href="https://database.guide/what-is-normalization/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/database.guide\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.1"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="What%20is%20Normalization_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="What%20is%20Normalization_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="What%20is%20Normalization_files/style_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="justread-style-css" href="What%20is%20Normalization_files/style_002.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://database.guide/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://database.guide/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://database.guide/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="What is the Third Manifesto?" href="https://database.guide/what-is-the-third-manifesto/">
+<link rel="next" title="What is OLTP?" href="https://database.guide/what-is-oltp/">
+<meta name="generator" content="WordPress 5.4.1">
+<link rel="shortlink" href="https://database.guide/?p=1203">
+<link rel="alternate" type="application/json+oembed" href="https://database.guide/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatabase.guide%2Fwhat-is-normalization%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://database.guide/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatabase.guide%2Fwhat-is-normalization%2F&amp;format=xml">
+		<style type="text/css">
+					.site-title a,
+			.site-description {
+				color: #1a64a5;
+			}
+				</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e8f2f7; }
+</style>
+			<style type="text/css" id="wp-custom-css">
+			/* Overide */
+.page .entry-content > p:first-child, .single .entry-content > p:first-child,
+.single .entry-content > p:first-child {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+	  color: #263238;
+}
+.page .entry-content pre, .single .entry-content pre {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1em;
+}
+.wp-block-preformatted {
+	background-color: #eee;
+	color: #000;
+}
+ .single .entry-content .CodeMirror-line{
+	padding: 0;
+}
+
+.CodeMirror-lines {
+	padding: 1em;
+}
+/* ID */
+.screenshot {
+    max-width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0,0,0,0.35) 5px 5px 5px;
+    }
+figure.wp-block-image figcaption {
+	color: #999;
+	font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+	font-size: 1rem;
+	text-align: center;
+}
+.ad-top { 
+	margin-bottom:30px;
+}
+.ad {
+	text-align: center
+}
+.ad-bottom {
+	margin-top:40px;
+}
+.ad ins {
+	background-color:transparent;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-1203 single-format-standard custom-background" data-gr-c-s-loaded="true">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div class="form-wrapper" id="form-wrapper">
+		<button class="search-close" id="search-close">×</button>
+		<form role="search" method="get" class="search-form" action="https://database.guide/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input class="search-field" placeholder="Search …" name="s" type="search">
+	</label>
+</form>
+	</div>
+
+	<header id="masthead" class="site-header">
+		<div class="navbar">
+			<div class="site-branding">
+									<p class="site-title"><a href="https://database.guide/" rel="home">Database.Guide</a></p>
+								</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation">
+				<ul id="primary-menu" class="menu nav-menu" aria-expanded="false"><li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15"><a href="https://database.guide/">Home</a></li>
+<li id="menu-item-848" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-848"><a href="https://database.guide/category/database-concepts/">Database Concepts</a></li>
+<li id="menu-item-849" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-849"><a href="https://database.guide/category/dbms/">Database Systems</a>
+<ul class="sub-menu">
+	<li id="menu-item-1043" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1043"><a href="https://database.guide/category/dbms/ordbms/">Object-Relational</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1041" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1041"><a href="https://database.guide/category/dbms/ordbms/oracle/">Oracle</a></li>
+		<li id="menu-item-1040" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1040"><a href="https://database.guide/category/dbms/ordbms/postgresql/">PostgreSQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1042"><a href="https://database.guide/category/dbms/nosql/">NoSQL</a></li>
+	<li id="menu-item-1044" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1044"><a href="https://database.guide/category/dbms/rdbms/">Relational</a>
+	<ul class="sub-menu">
+		<li id="menu-item-850" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-850"><a href="https://database.guide/category/dbms/rdbms/microsoft-access/">Microsoft Access</a></li>
+		<li id="menu-item-851" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-851"><a href="https://database.guide/category/dbms/rdbms/mysql/">MySQL</a></li>
+		<li id="menu-item-8179" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8179"><a href="https://database.guide/category/dbms/rdbms/sqlite/">SQLite</a></li>
+		<li id="menu-item-852" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-852"><a href="https://database.guide/category/dbms/rdbms/sql-server/">SQL Server</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-853" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-853"><a href="https://database.guide/category/sql/">SQL</a></li>
+</ul>			</nav><!-- #site-navigation -->
+		</div>
+		<div class="social-icons">
+						<button class="search-toggle" aria-controls="form-wrapper" aria-expanded="false"><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xlink:href="#icon-search"></use> </svg></button>
+			<button id="site-navigation-open" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+		</div>
+	</header><!-- #masthead -->
+
+    <div class="ad ad-top">
+        <script async="" src="What%20is%20Normalization_files/adsbygoogle.js"></script>
+        <!-- DG - Top -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6331358926293806" data-ad-slot="6131167154" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>    
+    </div>    
+    
+    
+	<div id="content" class="site-content">
+        
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+<article id="post-1203" class="post-1203 post type-post status-publish format-standard hentry category-database-concepts tag-codd tag-database-design tag-database-schema tag-normalization tag-rdbms tag-what-is">
+	<header class="entry-header">
+		<h1 class="entry-title">What is Normalization?</h1>					<div class="entry-meta">
+				<span class="byline"> <img alt="" src="What%20is%20Normalization_files/cf26bc738d620c9d38c272a08dd3fed7.jpg" srcset="https://secure.gravatar.com/avatar/cf26bc738d620c9d38c272a08dd3fed7?s=64&amp;d=mm&amp;r=g 2x" class="avatar avatar-32 photo" width="32" height="32"> <span class="author vcard"><a class="url fn n" href="https://database.guide/author/ian/">Ian</a></span></span><span class="posted-on"><span class="on">on</span><a href="https://database.guide/what-is-normalization/" rel="bookmark"><time class="entry-date published" datetime="2017-10-06T21:31:30+10:00">October 6, 2017</time><time class="updated" datetime="2020-02-14T16:29:31+10:00">February 14, 2020</time></a></span>			</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-body">
+				<div class="entry-content">
+			<p><dfn>Normalization</dfn>&nbsp;is the process of organizing a database to reduce redundancy and improve <a href="https://database.guide/what-is-data-integrity/">data integrity</a>.</p>
+<p>Normalization also simplifies the database design so that it achieves
+ the optimal structure composed of atomic elements (i.e. elements that 
+cannot be broken down into smaller parts).</p>
+<p>Also referred to as <dfn>database normalization</dfn> or&nbsp;<dfn>data normalization</dfn>,
+ normalization is an important part of relational database design, as it
+ helps with the speed, accuracy, and efficiency of the database.</p>
+<p><span id="more-1203"></span></p>
+<p>By normalizing a database, you arrange the data into <a href="https://database.guide/what-is-a-table/">tables</a> and <a href="https://database.guide/what-is-a-column/">columns</a>.&nbsp;
+ You ensure that each table contains only related data. If data is not 
+directly related, you create a new table for that data.</p>
+<p>For example, if you have a “Customers” table, you’d normally create a
+ separate table for the products they can order (you could call this 
+table “Products”). You’d create another table for customers’ orders 
+(perhaps called “Orders”). And if each order could contain multiple 
+items, you’d typically create yet another table to store each order item
+ (perhaps called “OrderItems”). All these tables would be linked by 
+their <a href="https://database.guide/what-is-a-primary-key/">primary key</a>, which allows you to find related data across all these tables (such as all orders by a given customer).</p>
+<h2>Benefits of Normalization</h2>
+<p>There are many benefits of normalizing a database. Here are some of the key benefits:</p>
+<ul>
+<li>Minimizes data redundancy (duplicate data).</li>
+<li>Minimizes null values.</li>
+<li>Results in a more compact database (due to less data redundancy/null values).</li>
+<li>Minimizes/avoids data modification issues.</li>
+<li>Simplifies queries.</li>
+<li>The database structure is cleaner and easier to understand. You can 
+learn a lot about a relational database just by looking at its <a href="https://database.guide/what-is-a-database-schema/">schema</a>.</li>
+<li>You can extend the database without necessarily impacting the existing data.</li>
+<li>Searching, sorting, and creating indexes can be faster, since tables are narrower, and more rows fit on a data page.</li>
+</ul>
+<h2>Example of a Normalized Database</h2>
+<p>When designing a relational database, one typically normalizes the 
+data before they create a schema. The database schema determines the 
+organization and the structure of the database – basically how the data 
+will be stored.</p>
+<p>Here’s an example of a normalized database schema:</p>
+<p>&nbsp;</p>
+<figure id="attachment_697" aria-describedby="caption-attachment-697" style="width: 478px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/06/MySQL_Schema_Music_Example.png"><img class="size-full wp-image-697" src="What%20is%20Normalization_files/MySQL_Schema_Music_Example.png" alt="Screenshot of a database schema." srcset="https://database.guide/wp-content/uploads/2016/06/MySQL_Schema_Music_Example.png 478w, https://database.guide/wp-content/uploads/2016/06/MySQL_Schema_Music_Example-300x172.png 300w" sizes="(max-width: 478px) 100vw, 478px" width="478" height="274"></a><figcaption id="caption-attachment-697" class="wp-caption-text">A basic schema diagram of a normalized database.</figcaption></figure>
+<p>&nbsp;</p>
+<p>This schema separates the data into three different <a href="https://database.guide/what-is-a-table/">tables</a>.
+ Each table is quite specific in the data that it stores – there’s one 
+table for albums, one for artists, and another that holds data that’s 
+specific to genre. However, because the relational model allows us to 
+create a <a href="https://database.guide/what-is-a-relationship/">relationship</a> between these tables, we can still find out which albums belong to which artist, and in which genre they belong.</p>
+<p>If we denormalize this database so that all three tables are combined into one table, we might have a table like this:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td><strong>ArtistName</strong></td>
+<td><strong>AlbumName</strong></td>
+<td><strong>DateReleased</strong></td>
+<td><strong>Genre</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Iron Maiden</td>
+<td>Powerslave</td>
+<td>03-Sep-1984</td>
+<td>Rock</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Iron Maiden</td>
+<td>Killers</td>
+<td>02-Feb-1981</td>
+<td>Rock</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Iron Maiden</td>
+<td>Somewhere in Time</td>
+<td>29-Sep-1986</td>
+<td>Rock</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Miles Davis</td>
+<td>Bitches Brew</td>
+<td>30-Mar-1970</td>
+<td>Jazz</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The Wiggles</td>
+<td>Big Red Car</td>
+<td>20-Feb-1995</td>
+<td>Childrens</td>
+</tr>
+</tbody>
+</table>
+<p>While this denormalized database can still be useful, it does have its shortcomings.</p>
+<p>You’ll notice we have to repeat the artist name for every album an 
+artist has released. We also repeat the genre across multiple albums. 
+This tends to require more storage space than a normalized database. But
+ it can be also troublesome when inserting, updating, or deleting data.</p>
+<p>In particular, it can result in the following three anomalies:</p>
+<dl>
+<dt><dfn>Update anomaly</dfn></dt>
+<dd>If we need to update an artist’s name, we’ll need to update multiple
+ rows. Same with genre. This could result in errors. If we update some 
+rows, but not others, we’ll end up with inaccurate data. This is known 
+as an update anomaly.</dd>
+<dt><dfn>Insertion anomaly</dfn></dt>
+<dd>It’s possible that some artists haven’t yet released any albums. In 
+this case, we can’t add the artist at all – unless we set three fields 
+to null (AlbumName, DateReleased, Genre). This is known as an insertion 
+anomaly. When the artist finally releases an album, we might insert a 
+new row, but in this case, we’ll end up with two rows for that artist – 
+one of which is pretty much useless, and could cause confusion. While we
+ could write scripts in an attempt to deal with this scenario, it’s not 
+an ideal situation, and the scripts themselves could contain errors.</dd>
+<dt><dfn>Deletion anomaly</dfn></dt>
+<dd>If we need to delete an album, we can’t do that without also 
+deleting the artist. If an artist only has one album, and we delete that
+ album, we’ll end up deleting the artist from our database. We’ll no 
+longer have any record of that artist in our database. This is known as a
+ deletion anomaly.</dd>
+</dl>
+<p>These anomalies are not good for <a href="https://database.guide/what-is-referential-integrity/">referential integrity</a> (or for data integrity in general).</p>
+<h2>The User is Unaware of the Normalized Structure</h2>
+<p>In a normalized database, the data is usually arranged independently 
+of the users’ desired view of that data. This is one of the principles 
+of relational database design.</p>
+<p>In fact, E.F. Codd’s 1970 paper <a href="https://dl.acm.org/citation.cfm?id=362685" target="_blank" rel="noopener noreferrer"><i>A Relational Model of Data for Large Shared Data Banks</i></a>&nbsp;(which introduced the relational model for the first time) starts with this line:</p>
+<blockquote><p>Future users of large data banks must be protected from 
+having to know how the data is organized in the machine (the internal 
+representation).</p></blockquote>
+<p>So for example, just because a user wants to see a list of albums 
+grouped by artist,&nbsp;this doesn’t mean that the database must arrange
+ the data in that way. Besides, users will usually want to see the data 
+represented in many different ways, depending on the task at hand. The 
+same user might later want to see a list of albums grouped by genre.</p>
+<p>Indeed, a user’s query results could look just like the 
+“denormalized” example above, even though the source data was spread 
+across multiple tables.</p>
+<p>The user might then run a report that presents the same data in a completely different way. Like this for example:</p>
+<figure id="attachment_1206" aria-describedby="caption-attachment-1206" style="width: 952px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2017/10/example_report_in_microsoft_access.png"><img class="size-full wp-image-1206" src="What%20is%20Normalization_files/example_report_in_microsoft_access.png" alt="Example report in Microsoft Access" srcset="https://database.guide/wp-content/uploads/2017/10/example_report_in_microsoft_access.png 952w, https://database.guide/wp-content/uploads/2017/10/example_report_in_microsoft_access-300x216.png 300w, https://database.guide/wp-content/uploads/2017/10/example_report_in_microsoft_access-768x554.png 768w, https://database.guide/wp-content/uploads/2017/10/example_report_in_microsoft_access-676x488.png 676w" sizes="(max-width: 952px) 100vw, 952px" width="952" height="687"></a><figcaption id="caption-attachment-1206" class="wp-caption-text">Example of a report in Microsoft Access. The report displays a list of albums, grouped by artist.</figcaption></figure>
+<p>In both cases, the user can view the data exactly as desired, regardless of its normalized structure within the database.</p>
+<p>Another benefit of this approach is that it’s possible to make 
+changes to the underlying data structure without affecting the users’ 
+view of that data.</p>
+<h2>Levels of Normalization</h2>
+<p>There are various levels of normalization, each one building on the 
+previous level. The most basic level of normalization is first normal 
+form (1NF), followed by second normal form (2NF).</p>
+<p>Most of today’s transactional databases are normalized in third normal form (3NF).</p>
+<p>For a database to satisfy a given level, it must satisfy the rules of
+ all lower levels, as well as the rule/s for the given level. For 
+example, to be in 3NF, a database must conform to 1NF, 2NF, as well as 
+3NF.</p>
+<p>The levels of normalization are listed below, in order of strength (with UNF being the weakest):</p>
+<dl>
+<dt><dfn title="Unnormalized Form">UNF</dfn> (Unnormalized Form)</dt>
+<dd>A database is in UNF if it has not been normalized at all.</dd>
+<dt><dfn title="First Normal Form">1NF</dfn> (First Normal Form)</dt>
+<dd>A relation (table) is in 1NF if (and only if) the domain of each 
+attribute contains only atomic (indivisible) values, and the value of 
+each attribute contains only a single value from that domain.</dd>
+<dt><dfn title="Second Normal Form">2NF</dfn> (Second Normal Form)</dt>
+<dd>A relation is in 2NF if it is in 1NF and every non-prime attribute 
+of the relation is dependent on the whole of every candidate key.</dd>
+<dt><dfn title="Third Normal Form">3NF</dfn> (Third Normal Form)</dt>
+<dd>A relation is in 3NF if it is in 2NF and every non-prime attribute 
+of the relation is non-transitively dependent on every key of the 
+relation.</dd>
+<dt><dfn title="Elementary Key Normal Form">EKNF</dfn> (Elementary Key Normal Form)</dt>
+<dd>EKNF is a subtle enhancement on 3NF. A relation is in EKNF, if and 
+only if, all its elementary functional dependencies begin at whole keys 
+or end at elementary key attributes.</dd>
+<dt><dfn title="Boyce-Codd Normal Form">BCNF</dfn> (Boyce-Codd Normal Form)</dt>
+<dd>BCNF is a subtle enhancement on 3NF. A relation is in Boyce–Codd 
+normal form if and only if for every one of its dependencies X → Y, at 
+least one of the following conditions hold:<p></p>
+<ul>
+<li>X → Y is a trivial functional dependency (Y ⊆ X)</li>
+<li>X is a superkey for schema R</li>
+</ul>
+</dd>
+<dt><dfn title="Fourth Normal Form">4NF</dfn> (Fourth Normal Form)</dt>
+<dd>A relation is in 4NF if and only if for every one of its non-trivial
+ multivalued dependencies X ↠ Y, X is a superkey—that is, X is either a 
+candidate key or a superset thereof.</dd>
+<dt><dfn title="Essential Tuple Normal Form">ETNF</dfn> (Essential Tuple Normal Form)</dt>
+<dd>A relation schema is in ETNF if and only if it is in Boyce-Codd 
+normal form and some component of every explicitly declared join 
+dependency of the schema is a superkey.</dd>
+<dt><dfn title="Fifth Normal Form">5NF</dfn> (Fifth Normal Form)</dt>
+<dd>A relation is in 5NF if and only if every non-trivial join dependency in that table is implied by the candidate keys.</dd>
+<dt><dfn title="Sixth Normal Form">6NF</dfn> (Sixth Normal Form)</dt>
+<dd>A relation is in 6NF if and only if every join dependency of the 
+relation is trivial — where a join dependency is trivial if and only if 
+one of its components is equal to the pertinent heading in its entirety.</dd>
+<dt><dfn title="Domain-Key Normal Form">DKNF</dfn> (Domain-Key Normal Form)</dt>
+<dd>A relation is in DKNF when every constraint on the relation is a 
+logical consequence of the definition of keys and domains, and enforcing
+ key and domain restraints and conditions causes all constraints to be 
+met. Thus, it avoids all non-temporal anomalies.</dd>
+</dl>
+<p>3NF is strong enough to satisfy most applications, and the higher 
+levels are rarely used, except in certain circumstances where the data 
+(and its usage) requires it.</p>
+<h2>Normalizing an Existing Database</h2>
+<p>Normalization can also be applied to existing databases that may not 
+have been normalized sufficiently, although this could get quite 
+complex, depending on how the existing database is designed, and how 
+heavily and frequently it’s used.</p>
+<p>You may also need to change the way the normalization was done by 
+denormalizing it first,&nbsp;then normalizing it to the form that you 
+require.</p>
+<h2>When to Normalize the Data</h2>
+<p>Normalization is particularly important for <a href="https://database.guide/what-is-oltp/">OLTP</a> systems, where inserts, updates, and deletes are occurring rapidly and are typically initiated by the end users.</p>
+<p>On the other hand, normalization is not always considered important for <a href="https://database.guide/what-is-a-data-warehouse/">data warehouses</a> and <a href="https://database.guide/what-is-olap/">OLAP</a>
+ systems, where data is often denormalized in order to improve the 
+performance of the queries that need to be done in that context.</p>
+<h2>When to Denormalize the Data</h2>
+<p>There are some scenarios where you might be better off denormalizing a database.</p>
+<p>Many data warehouses and OLAP applications use denormalized 
+databases. The main reason for this is performance. These applications 
+are typically used to run complex queries that join many tables 
+together, often returning extremely large data sets.</p>
+<p>There may also be other reasons for denormalizing a database, such as
+ implementing certain constraints that could not otherwise be 
+implemented.</p>
+<p>Here are some common reasons you might want to denormalize a database:</p>
+<ul>
+<li>Most of the frequently used queries require access to the full set of joined data.</li>
+<li>Most applications perform table scans when joining tables.</li>
+<li>Computational complexity of derived columns requires temporary tables or excessively complex queries.</li>
+<li>You may be able to implement constraints that could not otherwise be implemented (depending on the DBMS).</li>
+</ul>
+<p>So, while normalization is usually considered a “must have” for OLTP 
+and other transactional databases, it’s not always considered suitable 
+for certain analytical applications.</p>
+<p>However, some database professionals oppose the notion of 
+denormalizing a database, claiming that it’s unnecessary&nbsp;and does 
+not improve performance.</p>
+<h2>History of Normalization</h2>
+<ul>
+<li>The concept of normalization was first proposed by Edgar F. Codd in 
+1970, when he proposed the first normal form (1NF) in his paper <a href="https://dl.acm.org/citation.cfm?id=362685" target="_blank" rel="noopener noreferrer"><i>A Relational Model of Data for Large Shared Data Banks</i></a>&nbsp;(this is the paper in which he introduced the whole idea of relational databases).</li>
+<li>Codd continued his work on normalization and defined the&nbsp;second normal form (2NF) and third normal form (3NF) in 1971.</li>
+<li>Codd then teamed up with Raymond F. Boyce to define the Boyce-Codd normal form (BCNF) in 1974.</li>
+<li>Ronald Fagin introduced the fourth normal form (4NF) in 1977.</li>
+<li>Fagin then introduced the fifth normal form (5NF) in 1979.</li>
+<li>Fagin then introduced the domain key normal form (DKNF) in 1981.</li>
+<li>Carlo Zaniolo introduced the elementary key normal form (EKNF) in 1982.</li>
+<li>Ronald Fagin then teamed up with Hugh Darwen and C.J. Date to produce the essential tuple normal form (ETNF) in 2012.</li>
+</ul>
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<span class="cat-links"><span class="cat-links__title">Categories</span><a href="https://database.guide/category/database-concepts/" rel="category tag">Database Concepts</a></span><span class="tags-links"><span class="tags-links__title">Tags</span><a href="https://database.guide/tag/codd/" rel="tag">codd</a><a href="https://database.guide/tag/database-design/" rel="tag">database design</a><a href="https://database.guide/tag/database-schema/" rel="tag">database schema</a><a href="https://database.guide/tag/normalization/" rel="tag">normalization</a><a href="https://database.guide/tag/rdbms/" rel="tag">rdbms</a><a href="https://database.guide/tag/what-is/" rel="tag">what is</a></span>		</footer><!-- .entry-footer -->
+	</div>
+</article><!-- #post-1203 -->
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+<article class="adjacent">
+	<div class="card">
+				<div class="card__body">
+			<header class="card__header">
+														<a class="card__subtitle" href="https://database.guide/category/database-concepts/">Database Concepts</a>
+								<h3 class="card__title"><a href="https://database.guide/what-is-the-third-manifesto/" rel="bookmark">What is the Third Manifesto?</a></h3>			</header>
+
+			<div class="card__content">
+				<p>The Third Manifesto is a detailed proposal for the future direction of data and database management systems (DBMSs). Written by…</p>
+			</div><!-- .entry-summary -->
+		</div>
+	</div>
+</article>
+
+<article class="adjacent">
+	<div class="card">
+				<div class="card__body">
+			<header class="card__header">
+														<a class="card__subtitle" href="https://database.guide/category/database-concepts/">Database Concepts</a>
+								<h3 class="card__title"><a href="https://database.guide/what-is-oltp/" rel="bookmark">What is OLTP?</a></h3>			</header>
+
+			<div class="card__content">
+				<p>OLTP (Online Transactional Processing) is a category of data 
+processing that is focused on&nbsp;transaction-oriented tasks. OLTP 
+typically involves inserting, updating,…</p>
+			</div><!-- .entry-summary -->
+		</div>
+	</div>
+</article>
+</div>
+	</nav>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+
+    <div class="ad ad-bottom">
+            <script async="" src="What%20is%20Normalization_files/adsbygoogle.js"></script>
+            <!-- DG - Bottom -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6331358926293806" data-ad-slot="3221577561" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    
+
+	<footer id="colophon" class="site-footer">
+		
+		<div class="site-info">
+			<a href="https://database.guide/about/">About</a>
+			<span class="sep"> | </span>
+			<a href="https://database.guide/privacy-policy/">Privacy Policy</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="What%20is%20Normalization_files/navigation.js"></script>
+<script type="text/javascript" src="What%20is%20Normalization_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="What%20is%20Normalization_files/script.js"></script>
+<script type="text/javascript" src="What%20is%20Normalization_files/wp-embed.js"></script>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	<symbol id="icon-search" viewBox="0 0 1792 1792"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></symbol>
+
+	<symbol id="icon-bookmark" viewBox="0 0 1792 1792"><path d="M1420 128q23 0 44 9 33 13 52.5 41t19.5 62v1289q0 34-19.5 62t-52.5 41q-19 8-44 8-48 0-83-32l-441-424-441 424q-36 33-83 33-23 0-44-9-33-13-52.5-41t-19.5-62v-1289q0-34 19.5-62t52.5-41q21-9 44-9h1048z"></path></symbol>
+</svg>
+
+
+
+</body></html>

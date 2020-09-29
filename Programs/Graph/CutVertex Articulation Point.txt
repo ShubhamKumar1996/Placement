@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+#define int long long
+#define IOS ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL)
+using namespace std;
+
+int n,m, timer;
+vector<int>timeIn, minTime;
+vector<bool>visited, cutVertex;
+
+void DFS(vector<vector<int>>&adj, int vertex, int parent){
+    visited[vertex]=true;
+    timeIn[vertex] = minTime[vertex] = timer++;
+    int children = 0;
+    for(auto child: adj[vertex]){
+        if(child==parent) continue;
+        if(visited[child]==true){
+            minTime[vertex] = min(minTime[vertex], timeIn[child]);
+        }else{
+            DFS(adj, child, vertex);
+            minTime[vertex] = min(minTime[child], minTime[vertex]);
+            if(minTime[child]>=timeIn[vertex] && parent!=-1){
+                cutVertex[vertex] = true;
+            }
+            children++;
+        }
+    }
+    if(parent==-1 && children>1){
+        cutVertex[vertex] = true;
+    }
+    return;
+}
+
+int32_t main(){
+    while(1){
+        cin>>n>>m; if(n==0 && m==0) break;
+        vector<vector<int>>adj(n, (vector<int>()));
+        for(int i=0;i<m;i++){
+            int s, d; cin>>s>>d; adj[s-1].push_back(d-1); adj[d-1].push_back(s-1);
+        }
+        /*
+        for(int i=0;i<n;i++){
+            cout<<i<<": ";
+            for(auto &child: adj[i]){
+                cout<<child<<" ";
+            }
+            cout<<"\n";
+        }
+        */
+        timer = 0; timeIn.assign(n, -1); minTime.assign(n, -1); visited.assign(n, false); cutVertex.assign(n, false);
+        for(int i=0;i<n;i++){
+            if(visited[i]==false){
+                DFS(adj, i, -1);
+            }
+        }
+        int result = count(cutVertex.begin(), cutVertex.end(), true);
+        cout<<result<<"\n";
+    }
+    return 0;
+}
+    

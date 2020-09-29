@@ -63,39 +63,5 @@ int main()
         cout<<"\n";
     }
     BFS(adlist, num_vertex);
-
-    // Print BFS.
-    /*int src;
-    cout<<"Enter Source Node: ";
-    cin>>src;
-
-    cout<<"BFS Traversal : ";
-
-    bool visited[num_vertex+1];
-    for(int i=1;i<=num_vertex;i++)
-    {
-        visited[i] = false;
-    }
-    visited[src] = visited[0] = true;
-
-    queue<int>q;
-    q.push(src);
-    int temp;
-    while(!q.empty())
-    {
-        temp = q.front();
-        cout<<temp<<" ";
-        q.pop();
-
-        for(vector<int>::iterator itr = adlist[temp].begin(); itr != adlist[temp].end(); itr++)
-        {
-            if(visited[*itr] == false)
-            {
-                visited[*itr] = true;
-                q.push(*itr);
-            }
-        }
-    }
-    */
     return 0;
 }

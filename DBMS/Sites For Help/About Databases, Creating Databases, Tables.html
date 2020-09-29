@@ -1,0 +1,386 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<title>Database Tutorial (Part 1) – About Databases, Creating Databases, Tables | Database.Guide</title>
+
+<!-- All In One SEO Pack 3.4.3[212,320] -->
+<meta name="description"  content="This article is part 1 of the database tutorial. Here, we cover the following: What is a database? What is a Database Management System (DBMS)? Types of" />
+
+<meta name="keywords"  content="create database,tutorial,database concepts" />
+
+<script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://database.guide/#organization","url":"https://database.guide/","name":"Database.Guide","sameAs":[]},{"@type":"WebSite","@id":"https://database.guide/#website","url":"https://database.guide/","name":"Database.Guide","publisher":{"@id":"https://database.guide/#organization"}},{"@type":"WebPage","@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#webpage","url":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/","inLanguage":"en-US","name":"Database Tutorial (Part 1) - About Databases, Creating Databases, Tables","isPartOf":{"@id":"https://database.guide/#website"},"breadcrumb":{"@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#breadcrumblist"},"datePublished":"2016-06-16T03:34:48+10:00","dateModified":"2016-06-23T02:43:14+10:00"},{"@type":"Article","@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#article","isPartOf":{"@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#webpage"},"author":{"@id":"https://database.guide/author/ian/#author"},"headline":"Database Tutorial (Part 1) &#8211; About Databases, Creating Databases, Tables","datePublished":"2016-06-16T03:34:48+10:00","dateModified":"2016-06-23T02:43:14+10:00","commentCount":0,"mainEntityOfPage":{"@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#webpage"},"publisher":{"@id":"https://database.guide/#organization"},"articleSection":"Database Concepts, create database, tutorial"},{"@type":"Person","@id":"https://database.guide/author/ian/#author","name":"Ian","sameAs":[],"image":{"@type":"ImageObject","@id":"https://database.guide/#personlogo","url":"https://secure.gravatar.com/avatar/cf26bc738d620c9d38c272a08dd3fed7?s=96&d=mm&r=g","width":96,"height":96,"caption":"Ian"}},{"@type":"BreadcrumbList","@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://database.guide/","url":"https://database.guide/","name":"Database.Guide"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/","url":"https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/","name":"Database Tutorial (Part 1) - About Databases, Creating Databases, Tables"}}]}]}</script>
+<link rel="canonical" href="https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/" />
+			<script type="text/javascript" >
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-269964-18', 'auto');
+				// Plugins
+				ga('require', 'linkid', 'linkid.js');ga('require', 'outboundLinkTracker');
+				ga('send', 'pageview');
+			</script>
+			<script async src="https://www.google-analytics.com/analytics.js"></script>
+			<script async src="https://database.guide/wp-content/plugins/all-in-one-seo-pack/public/js/vendor/autotrack.js"></script>
+				<!-- All In One SEO Pack -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Database.Guide &raquo; Feed" href="https://database.guide/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Database.Guide &raquo; Comments Feed" href="https://database.guide/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Database.Guide &raquo; Database Tutorial (Part 1) &#8211; About Databases, Creating Databases, Tables Comments Feed" href="https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/database.guide\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.1"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://database.guide/wp-includes/css/dist/block-library/style.min.css?ver=5.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='https://database.guide/wp-content/themes/justread/style.css?ver=5.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='justread-style-css'  href='https://database.guide/wp-content/themes/justread-child/style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://database.guide/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://database.guide/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://database.guide/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Database Tutorial' href='https://database.guide/database-tutorial/' />
+<link rel='next' title='Database Tutorial (Part 2) &#8211; Relationships, Adding Data, Querying Databases' href='https://database.guide/database-tutorial-part-2-relationships-adding-data-querying-databases/' />
+<meta name="generator" content="WordPress 5.4.1" />
+<link rel='shortlink' href='https://database.guide/?p=879' />
+<link rel="alternate" type="application/json+oembed" href="https://database.guide/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatabase.guide%2Fdatabase-tutorial-part-1-about-databases-creating-databases-tables%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://database.guide/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatabase.guide%2Fdatabase-tutorial-part-1-about-databases-creating-databases-tables%2F&#038;format=xml" />
+		<style type="text/css">
+					.site-title a,
+			.site-description {
+				color: #1a64a5;
+			}
+				</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e8f2f7; }
+</style>
+			<style type="text/css" id="wp-custom-css">
+			/* Overide */
+.page .entry-content > p:first-child, .single .entry-content > p:first-child,
+.single .entry-content > p:first-child {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+	  color: #263238;
+}
+.page .entry-content pre, .single .entry-content pre {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1em;
+}
+.wp-block-preformatted {
+	background-color: #eee;
+	color: #000;
+}
+ .single .entry-content .CodeMirror-line{
+	padding: 0;
+}
+
+.CodeMirror-lines {
+	padding: 1em;
+}
+/* ID */
+.screenshot {
+    max-width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0,0,0,0.35) 5px 5px 5px;
+    }
+figure.wp-block-image figcaption {
+	color: #999;
+	font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+	font-size: 1rem;
+	text-align: center;
+}
+.ad-top { 
+	margin-bottom:30px;
+}
+.ad {
+	text-align: center
+}
+.ad-bottom {
+	margin-top:40px;
+}
+.ad ins {
+	background-color:transparent;
+}		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-879 single-format-standard custom-background">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div class="form-wrapper" id="form-wrapper">
+		<button
+			class="search-close" id="search-close"
+					>&times;</button>
+		<form role="search" method="get" class="search-form" action="https://database.guide/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input class="search-field" placeholder="Search &hellip;" value="" name="s" type="search">
+	</label>
+</form>
+	</div>
+
+	<header id="masthead" class="site-header">
+		<div class="navbar">
+			<div class="site-branding">
+									<p class="site-title"><a href="https://database.guide/" rel="home">Database.Guide</a></p>
+								</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation">
+				<ul id="primary-menu" class="menu"><li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15"><a href="https://database.guide">Home</a></li>
+<li id="menu-item-848" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-848"><a href="https://database.guide/category/database-concepts/">Database Concepts</a></li>
+<li id="menu-item-849" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-849"><a href="https://database.guide/category/dbms/">Database Systems</a>
+<ul class="sub-menu">
+	<li id="menu-item-1043" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1043"><a href="https://database.guide/category/dbms/ordbms/">Object-Relational</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1041" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1041"><a href="https://database.guide/category/dbms/ordbms/oracle/">Oracle</a></li>
+		<li id="menu-item-1040" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1040"><a href="https://database.guide/category/dbms/ordbms/postgresql/">PostgreSQL</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1042"><a href="https://database.guide/category/dbms/nosql/">NoSQL</a></li>
+	<li id="menu-item-1044" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1044"><a href="https://database.guide/category/dbms/rdbms/">Relational</a>
+	<ul class="sub-menu">
+		<li id="menu-item-850" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-850"><a href="https://database.guide/category/dbms/rdbms/microsoft-access/">Microsoft Access</a></li>
+		<li id="menu-item-851" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-851"><a href="https://database.guide/category/dbms/rdbms/mysql/">MySQL</a></li>
+		<li id="menu-item-8179" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8179"><a href="https://database.guide/category/dbms/rdbms/sqlite/">SQLite</a></li>
+		<li id="menu-item-852" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-852"><a href="https://database.guide/category/dbms/rdbms/sql-server/">SQL Server</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-853" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-853"><a href="https://database.guide/category/sql/">SQL</a></li>
+</ul>			</nav><!-- #site-navigation -->
+		</div>
+		<div class="social-icons">
+						<button
+				class="search-toggle" aria-controls="form-wrapper" aria-expanded="false"
+							><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xlink:href="#icon-search"></use> </svg></button>
+			<button id="site-navigation-open" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+		</div>
+	</header><!-- #masthead -->
+
+    <div class="ad ad-top">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- DG - Top -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6331358926293806"
+             data-ad-slot="6131167154"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>    
+    </div>    
+    
+    
+	<div id="content" class="site-content">
+        
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+<article id="post-879" class="post-879 post type-post status-publish format-standard hentry category-database-concepts tag-create-database tag-tutorial">
+	<header class="entry-header">
+		<h1 class="entry-title">Database Tutorial (Part 1) &#8211; About Databases, Creating Databases, Tables</h1>					<div class="entry-meta">
+				<span class="byline"> <img alt='' src='https://secure.gravatar.com/avatar/cf26bc738d620c9d38c272a08dd3fed7?s=32&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cf26bc738d620c9d38c272a08dd3fed7?s=64&#038;d=mm&#038;r=g 2x' class='avatar avatar-32 photo' height='32' width='32' /> <span class="author vcard"><a class="url fn n" href="https://database.guide/author/ian/">Ian</a></span></span><span class="posted-on"><span class="on">on</span><a href="https://database.guide/database-tutorial-part-1-about-databases-creating-databases-tables/" rel="bookmark"><time class="entry-date published" datetime="2016-06-15T20:34:48+10:00">June 15, 2016</time><time class="updated" datetime="2016-06-22T19:43:14+10:00">June 22, 2016</time></a></span>			</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-body">
+				<div class="entry-content">
+			<p>This article is part 1 of the <a href="https://database.guide/database-tutorial/">database tutorial</a>.</p>
+<p>Here, we cover the following:</p>
+<ul>
+<li>What is a database?</li>
+<li>What is a Database Management System (DBMS)?</li>
+<li>Types of databases</li>
+<li>What does a relational database look like?</li>
+<li>Creating a database</li>
+<li>Creating tables</li>
+<li>Data types</li>
+</ul>
+<p><span id="more-879"></span></p>
+<p>So before we get into the details of databases, let&#8217;s define what a database actually is.</p>
+<h2>What is a Database?</h2>
+<p>A database is a collection of structured data.</p>
+<p>In a database, data is stored in a way that makes it easy to retrieve. A database should make it easy for you to find the exact data that you require. A database enables you to pick only the data that you require on any given occasion.</p>
+<p>So in theory, a comma separated file is a database. If you were to create a file, save it with a .csv extension, and include the following text, it would technically be a database.</p>
+<pre>ID, Name, Email
+1, Bruce, bruce@example.com
+
+2, Cindy, cindy@example.org
+
+3, John, john@example.net</pre>
+<p>This is a database, because it stores data in a structured way. Each line is a new record and the commas separate each field of data. So you could find all information on Cindy simply by looking at the whole line. The same data could also be in an Excel spreadsheet and technically, it would also be a database.</p>
+<p>But these days, databases are a bit more advanced than text files and spreadsheets. Most modern day databases have been built with a database management system.</p>
+<h2>What is a Database Management System (DBMS)?</h2>
+<p>A database management system (DBMS) is specialised software that is used for building and managing databases.</p>
+<p>Most database management systems enable you to do things like create databases, add data, query the data, etc. Many have more advanced features such as advanced security features, analytical tools, scheduled backups and more. And some DBMSs allow you to do things like create forms, reports, import/export data, etc.</p>
+<p>Examples of DBMSs include:</p>
+<ul>
+<li><a href="https://database.guide/what-is-microsoft-access/">Microsoft Access</a>. Popular with individuals and small businesses.</li>
+<li><a href="https://database.guide/what-is-sql-server/">SQL Server</a>. Also from Microsoft, SQL Server is a more sophisticated and robust DBMS than Access.</li>
+<li><a href="https://database.guide/what-is-mysql/">MySQL</a>. Widely used open source DBMS.</li>
+</ul>
+<h2>Types of Databases</h2>
+<p>There are many types of databases. Here are some of the main ones:</p>
+<ul>
+<li><a href="https://database.guide/what-is-an-rdbms/">Relational</a></li>
+<li>Flat file</li>
+<li>Hierarchical</li>
+<li><a href="https://database.guide/what-is-an-oodbms/">Object oriented</a></li>
+<li><a href="https://database.guide/what-is-an-ordbms/">Object-relational</a></li>
+<li>Network</li>
+<li><a href="https://database.guide/what-is-nosql/">NoSQL</a>
+<ul>
+<li>Wide column store</li>
+<li><a href="https://database.guide/what-is-a-document-store-database/">Document-oriented database</a>, or Document store</li>
+<li><a href="https://database.guide/what-is-a-graph-database/">Graph database</a>, or graph-oriented database</li>
+<li><a href="https://database.guide/what-is-a-key-value-database/">Key-value database</a>, or key-value store</li>
+<li>Multi-model</li>
+</ul>
+</li>
+</ul>
+<p>The text file example we used previously would be referred to as a &#8220;flat file&#8221; database.</p>
+<p>The most common type of database is a relational database.</p>
+<p>This tutorial focuses mainly on relational databases.</p>
+<h2>What does a Relational Database Look Like?</h2>
+<p>The biggest hurdle many people find when learning about relational databases is that, they have trouble visualising what a database should actually look like. This is especially true if you&#8217;re used to using spreadsheet software to store your data. Having a mental picture can be a great help in understanding relational databases.</p>
+<p>Consider the following diagram:</p>
+<p><a href="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-1.png"><img class="wp-image-863 size-full alignnone" src="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-1.png" alt="Basic diagram of a relational database." width="577" height="367" srcset="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-1.png 577w, https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-1-300x191.png 300w" sizes="(max-width: 577px) 100vw, 577px" /></a></p>
+<p>We can take the above model, and create a database with real data:</p>
+<p><a href="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-2.png"><img class="alignnone wp-image-864 size-full" src="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-2.png" alt="Basic diagram of database with a database name, table names and field names." width="578" height="367" srcset="https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-2.png 578w, https://database.guide/wp-content/uploads/2016/06/Relational-Database-Structure-Example-2-300x190.png 300w" sizes="(max-width: 578px) 100vw, 578px" /></a></p>
+<p>So one of the first steps in creating a database is to create the tables and name them. When you create the tables, you also create the columns (or fields) that will hold the data and name them too.</p>
+<p>See how we&#8217;ve named the three tables and their columns? This will make the data easier to find than if they&#8217;d been named <samp>A</samp>, <samp>B</samp>, <samp>C</samp>, etc. If you want to see a list of artists, you know to look in the <samp>Artists</samp> table. Same with albums and ratings.</p>
+<h2>Creating a Database</h2>
+<p>Most of the popular RDBMSs allow you to do most tasks either via the GUI (Graphical User Interface) or programatically. This holds true for creating databases too.</p>
+<h3>Using the GUI</h3>
+<p>Using the GUI involves simply &#8220;pointing and clicking&#8221; your way through the various options/prompts as you would with any other software interface.</p>
+<p>For example, here&#8217;s how you can create a database in Access:</p>
+<figure id="attachment_102" aria-describedby="caption-attachment-102" style="width: 600px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_1.png"><img class="wp-image-102 size-full" src="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_1.png" alt="Screenshot of the Access welcome screen" width="600" height="439" srcset="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_1.png 600w, https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_1-300x220.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><figcaption id="caption-attachment-102" class="wp-caption-text">The Microsoft Access welcome screen allows you to create a database from scratch. You can also search through thousands of templates for a prebuilt database that you can use to get started.</figcaption></figure>
+<figure id="attachment_105" aria-describedby="caption-attachment-105" style="width: 600px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_2.png"><img class="size-full wp-image-105" src="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_2.png" alt="Screenshot of prompt to name the database." width="600" height="440" srcset="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_2.png 600w, https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_2-300x220.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><figcaption id="caption-attachment-105" class="wp-caption-text">After clicking on &#8220;Blank Desktop Database&#8221; you will be prompted to name your database before clicking &#8220;Create&#8221;.</figcaption></figure>
+<figure id="attachment_106" aria-describedby="caption-attachment-106" style="width: 600px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_3.png"><img class="size-full wp-image-106" src="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_3.png" alt="Screenshot of blank database" width="600" height="440" srcset="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_3.png 600w, https://database.guide/wp-content/uploads/2016/05/how_to_create_a_database_in_access_3-300x220.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a><figcaption id="caption-attachment-106" class="wp-caption-text">This is a newly created blank desktop database. A table has automatically been created. You can now customise this database to your own needs.</figcaption></figure>
+<p>Other systems might require you to right-click on a <samp>Databases</samp> node or similar but the process is essentially the same &#8211; simply select a <samp>Create Database</samp> option and name the file.</p>
+<p>Once the blank database is created, you can then add tables and other objects as needed.</p>
+<p>Then once all of that has been set up, you can then add data.</p>
+<h3>Creating a Database Programatically</h3>
+<p>Most relational database management systems allow you to create databases (and most other tasks) programatically using SQL.</p>
+<p><a href="https://database.guide/what-is-sql/">SQL</a> (Structured Query Language) is a language designed specifically for working with databases. It is used to create databases, tables, etc. It is also used to query data from the database.</p>
+<p>In fact, when you use the GUI to create a database, the system actually uses SQL behind the scenes to generate it.</p>
+<p>Seeing as this a database tutorial for beginners, we won&#8217;t be going into much detail with SQL. Just know that most tasks mentioned in this tutorial can be done either via the GUI or SQL.</p>
+<h2>Creating Tables</h2>
+<p>Tables can also be created via the GUI or programatically.</p>
+<p>Here&#8217;s the button for creating a table via the Access GUI:</p>
+<figure id="attachment_135" aria-describedby="caption-attachment-135" style="width: 578px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_1.png"><img class="wp-image-135 size-full" src="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_1.png" alt="Screenshot of the CREATE tab of the Ribbon in Microsoft Access 2013" width="578" height="145" srcset="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_1.png 578w, https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_1-300x75.png 300w" sizes="(max-width: 578px) 100vw, 578px" /></a><figcaption id="caption-attachment-135" class="wp-caption-text">Clicking the &#8220;Table&#8221; icon from the &#8220;CREATE&#8221; tab creates a new table.</figcaption></figure>
+<p>When you create tables, you also create the columns and specify their data types.</p>
+<h2>Data Types</h2>
+<p>Data type is an important concept in the world of databases. Most database management systems require that you specify a data type for each column.</p>
+<p>Data type refers to the type of data that will be stored in that column. For example, it could be a number, some text, or a date, etc.</p>
+<p>Here&#8217;s a screenshot of selecting a data type in Access. This dropdown menu appears as soon as you try to add a new field:</p>
+<figure id="attachment_138" aria-describedby="caption-attachment-138" style="width: 200px" class="wp-caption aligncenter"><a href="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_2.png"><img class="size-full wp-image-138" src="https://database.guide/wp-content/uploads/2016/05/how_to_create_a_table_in_access_2.png" alt="Screenshot of dropdown list of data types" width="200" height="268" /></a><figcaption id="caption-attachment-138" class="wp-caption-text">When you click to add a new field, you&#8217;ll be prompted to select a data type first.</figcaption></figure>
+<p>One of the main benefits of specifying the data type for each column is that it helps prevent wrong data being entered.</p>
+<p>For example, it can prevent the user from accidentally entering a date into a field intended to store a phone number. If this was allowed to happen, your database would probably end up with inaccurate and inconsistent data. Imagine trying to find a person&#8217;s phone number, only to find a date instead.</p>
+<p>So setting up data types is an important part of creating a database. It helps to maintain <a href="https://database.guide/what-is-data-integrity/">data integrity</a>.</p>
+<h3>Database Tutorial (Part 2)</h3>
+<p>In part 2 of this tutorial we cover <a href="https://database.guide/database-tutorial-part-2-relationships-adding-data-querying-databases/">relationships, adding data, and querying a database</a>.</p>
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<span class="cat-links"><span class="cat-links__title">Categories</span><a href="https://database.guide/category/database-concepts/" rel="category tag">Database Concepts</a></span><span class="tags-links"><span class="tags-links__title">Tags</span><a href="https://database.guide/tag/create-database/" rel="tag">create database</a><a href="https://database.guide/tag/tutorial/" rel="tag">tutorial</a></span>		</footer><!-- .entry-footer -->
+	</div>
+</article><!-- #post-879 -->
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links">
+<article class="adjacent">
+	<div class="card">
+				<div class="card__body">
+			<header class="card__header">
+														<a class="card__subtitle" href="https://database.guide/category/database-concepts/">Database Concepts</a>
+								<h3 class="card__title"><a href="https://database.guide/database-tutorial/" rel="bookmark">Database Tutorial</a></h3>			</header>
+
+			<div class="card__content">
+				<p>This database tutorial is for beginners. It explains basic concepts and assumes no prior knowledge of databases. You don&#8217;t need to&hellip;</p>
+			</div><!-- .entry-summary -->
+		</div>
+	</div>
+</article>
+
+<article class="adjacent">
+	<div class="card">
+				<div class="card__body">
+			<header class="card__header">
+														<a class="card__subtitle" href="https://database.guide/category/database-concepts/">Database Concepts</a>
+								<h3 class="card__title"><a href="https://database.guide/database-tutorial-part-2-relationships-adding-data-querying-databases/" rel="bookmark">Database Tutorial (Part 2) &#8211; Relationships, Adding Data, Querying Databases</a></h3>			</header>
+
+			<div class="card__content">
+				<p>This article is part 2 of the database tutorial. Here, we cover: Relationships The different ways of adding data to a database Querying&hellip;</p>
+			</div><!-- .entry-summary -->
+		</div>
+	</div>
+</article>
+</div>
+	</nav>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+
+    <div class="ad ad-bottom">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- DG - Bottom -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6331358926293806"
+                 data-ad-slot="3221577561"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    
+
+	<footer id="colophon" class="site-footer">
+		
+		<div class="site-info">
+			<a href="https://database.guide/about/">About</a>
+			<span class="sep"> | </span>
+			<a href="https://database.guide/privacy-policy/">Privacy Policy</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type='text/javascript' src='https://database.guide/wp-content/themes/justread/js/navigation.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://database.guide/wp-content/themes/justread/js/skip-link-focus-fix.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://database.guide/wp-content/themes/justread/js/script.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://database.guide/wp-includes/js/wp-embed.min.js?ver=5.4.1'></script>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	<symbol id="icon-search" viewBox="0 0 1792 1792"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"/></symbol>
+
+	<symbol id="icon-bookmark" viewBox="0 0 1792 1792"><path d="M1420 128q23 0 44 9 33 13 52.5 41t19.5 62v1289q0 34-19.5 62t-52.5 41q-19 8-44 8-48 0-83-32l-441-424-441 424q-36 33-83 33-23 0-44-9-33-13-52.5-41t-19.5-62v-1289q0-34 19.5-62t52.5-41q21-9 44-9h1048z" /></symbol>
+</svg>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& v1, vector<int>& v2) {
+        int n = (int)v1.size(), m = (int)v2.size();
+        if(n>m)
+            return findMedianSortedArrays(v2, v1);
+         double result;
+        int start = 0, end = n;
+        while(start<=end){
+            int position1 = start + (end-start)/2;
+            int position2 = (n+m+1)/2 - position1;
+            
+            int maxLeft1 = (position1==0) ? INT_MIN : v1[position1-1];
+            int minRight1 = (position1==n) ? INT_MAX : v1[position1];
+            
+            int maxLeft2 = (position2==0) ? INT_MIN : v2[position2-1];
+            int minRight2 = (position2==m) ? INT_MAX : v2[position2];
+            
+            if(maxLeft1<=minRight2 && maxLeft2 <= minRight1){
+                if((n+m)%2==0){
+                    return result = (max(maxLeft1, maxLeft2) + min(minRight1, minRight2))/(double)2;
+                }else{
+                    return result = max(maxLeft1, maxLeft2);
+                }
+            }
+            if(maxLeft1>minRight2) end = position1 - 1;
+            else start = position1 + 1;
+        }
+        return -1;
+    }
+};
